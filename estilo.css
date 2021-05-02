@@ -593,9 +593,7 @@ nav {
     grid-area: heade;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 25vh;
         grid-template-rows: 25vh;
-    -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
   }
   .gridNavIndex {
@@ -664,7 +662,7 @@ nav {
         grid-template-rows: 25vh 5vh 80vh 5vh 20vh 5vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "header  " "nav     " "mainCentral " "arriba  " "footer  " ".";
+        grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
   }
   .gridMainMediaVision {
     -ms-grid-row: 3;
@@ -716,7 +714,7 @@ nav {
         grid-template-rows: 25vh 5vh 158vh 5vh 20vh 1vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "header  " "nav     " "mainCentral " "arriba  " "footer  " ".";
+        grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
   }
   .gridMainServicios {
     -ms-grid-row: 3;
@@ -785,7 +783,7 @@ nav {
         grid-template-rows: 25vh 5vh 100vh 5vh 21vh 1vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "header  " "nav     " "mainCentral " "arriba  " "footer  " ".";
+        grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
   }
   .gridMainHorarios {
     -ms-grid-row: 3;
@@ -878,7 +876,7 @@ nav {
         grid-template-rows: 25vh 5vh 160vh 5vh 21vh 1vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "header  " "nav     " "mainCentral " "arriba  " "footer  " ".";
+        grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
   }
   .gridMainContacto {
     -ms-grid-row: 3;

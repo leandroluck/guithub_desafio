@@ -1,0 +1,29 @@
+[33mcommit 8799c11a5818fd271645c320ddca434421883329[m[33m ([m[1;36mHEAD[m[33m, [m[1;32mmenuvertical[m[33m)[m
+Author: Leandro <leandro_luck@yahoo.com.ar>
+Date:   Sun May 2 18:50:00 2021 -0300
+
+    Se corrigen errores en grids del index y en el media query el navegador pase de ser horizontal a ser  vertical
+
+[33mcommit 37ebde8649e27f0276e7156bd72d0ac1d02395bd[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Leandro <leandro_luck@yahoo.com.ar>
+Date:   Sun May 2 16:20:43 2021 -0300
+
+    Se copia info de css a scss
+
+[33mcommit af386081809ec2112e2cfd87a72d5af8a5855a2c[m
+Author: Leandro <leandro_luck@yahoo.com.ar>
+Date:   Sun May 2 16:10:04 2021 -0300
+
+    inicio
+
+[33mcommit 46cf336625ed576202880462c82d69a28e16c52c[m
+Author: Leandro <leandro_luck@yahoo.com.ar>
+Date:   Sat May 1 22:18:09 2021 -0300
+
+    Se agrego meta name=keywords
+
+[33mcommit fb4c339fbf4dd6865b48eba992bd9258fe5e06b1[m
+Author: Leandro <leandro_luck@yahoo.com.ar>
+Date:   Sat May 1 16:47:23 2021 -0300
+
+    First commit
