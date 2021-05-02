@@ -48,59 +48,84 @@ body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0
             display: grid;
             grid-template-rows:25vh 5vh 105vh 5vh 21vh 10vh;
             grid-template-columns: 100vh;
-            grid-template-areas:"header  "
-                                "nav     "
+            grid-template-areas:"heade  "
+                                "nave     "
                                 "mainCentral "
                                 "arriba  "
                                 "footer  "
                                  ".";}
 
 
+.gridHeaderIndex{   grid-area: heade;
+                    display: grid;
+                    grid-template-rows: 25vh;
+                    grid-template-columns: 100vh;}
+
+.imgHeader{
+            width:100%;
+            display: grid;
+            grid-template-columns:10vh 80vh 10vh;
+            grid-template-rows: 25vh;
+            grid-template-areas:". centrado .";
+            justify-items: center;}
+
+.imagenHeader{  grid-area: centrado;
+                max-width: 100%;
+                height: 25vh;}
+
+.gridNavIndex{  grid-area:nave ;
+                display: grid;
+                grid-template-rows: 5vh;
+                grid-column: 100vh;}
+
+.gridListaNav{  margin: 0%;
+                padding: 0%;
+                list-style: none;
+                height: 5vh;
+                display: grid;
+                grid-template-rows:100%;
+                grid-template-columns:20% 20% 20% 20% 20%;
+                justify-items: center;
+                align-items: center;}
+
+nav{ font-size: 2vh;
+     grid-area: nav;
+     background-color: aquamarine;}
+                   
+                   
+.liNav:hover{ font-size: 120%;
+              transition: 2s;}
+                   
+
+
+
+
 .gridCuerpoContacto{
                     display: grid;
                     grid-template-rows:25vh 5vh 110vh 5vh 21vh 10vh;
                     grid-template-columns: 100vh;
-                    grid-template-areas:"header  "
-                                    "nav     "
-                                    "mainCentral "
-                                    "arriba  "
-                                    "footer  "
-                                    ".";}
+                    grid-template-areas:"encabe  "
+                                        "nave"
+                                        "mainCentral "
+                                        "arriba  "
+                                        "footer  "
+                                        ".";}
 
 
-.imgHeader{grid-area: header;
-        width:100%;
-        display: grid;
-        grid-template-columns:10vh 80vh 10vh;
-        grid-template-rows: 100vh;
-        grid-template-areas:". centrado .";
-        justify-items: center;}
-
-.imagenHeader{  grid-area: centrado;
-            max-width: 100%;
-            height: 25vh;
-            
-
-}
-
-nav{ font-size: 2vh;
- grid-area: nav;
- background-color: aquamarine;}
 
 
-.liNav:hover{ font-size: 120%;
-            transition: 2s;}
 
-#gridListaNav{  margin: 0%;
-            padding: 0%;
-            list-style: none;
-            height: 100%;
-            grid-area: nav;
-            display: grid;
-            grid-template-rows:100%;
-            grid-template-columns:20% 20% 20% 20% 20%;
-           justify-items: center;
-            align-items: center;}
+
+/*#gridListaNav{  margin: 0%;
+                padding: 0%;
+                list-style: none;
+                height: 100%;
+                display: grid;
+                grid-area: nave;
+                grid-template-rows:100%;
+                grid-template-columns:20% 20% 20% 20% 20%;
+                justify-items: center;
+                align-items: center;}*/
 
 
 .gridMain{      grid-area: mainCentral;
@@ -360,29 +385,59 @@ nav{ font-size: 2vh;
 
 body{width: 40vh;}
 
-.imgHeader{grid-area: header;
-    width:100%;
-    display: grid;
-    grid-template-columns:5vh 30vh 5vh;
-    grid-template-rows: 100vh;
-    grid-template-areas:". centrado .";
-    justify-items: center;}
+
 
 body footer div img{max-width: 5vh;
                height: 5vh;}
+
+
 /*Index*/
 .mediaIndex{height: 190vh;}
 
+
 .gridCuerpo{
             display: grid;
-            grid-template-rows:25vh 5vh 125vh 5vh 20vh 5vh;
+            grid-template-rows:25vh 12.5vh 125vh 5vh 20vh 5vh;
             grid-template-columns: 40vh;
-            grid-template-areas:"header  "
-                                "nav     "
+            grid-template-areas:"heade  "
+                                "nave     "
                                 "mainCentral "
                                 "arriba  "
                                 "footer  "
                                  ".";}
+
+.gridHeaderIndex{   grid-area: heade;
+    display: grid;
+    grid-template-rows: 25vh;
+    grid-template-columns: 40vh;}
+
+.gridNavIndex{ /* grid-area:nave ;
+                display: grid;*/
+                grid-template-rows: 12.5vh;
+                grid-column: 40vh;}
+
+.imgHeader{
+            width:25vh;
+            display: grid;
+            grid-template-columns:5vh 30vh 5vh;
+            grid-template-rows: 100%;
+            grid-template-areas:". centrado .";
+            justify-items: center;}
+
+
+.gridListaNav{  margin: 0%;
+                padding: 0%;
+                list-style: none;
+                height: 100%;
+                display: grid;
+                grid-template-rows:2.5vh 2.5vh 2.5vh 2.5vh 2.5vh;
+                grid-template-columns:100%;
+               justify-items: center;
+                align-items: center;}
+
+
+
+
 
 .gridMain{      grid-area: mainCentral;
             display: grid;
@@ -410,6 +465,9 @@ body footer div img{max-width: 5vh;
                         "arriba  "
                         "footer  "
                          ".";}
+
+
+
 
 .gridMainMediaVision{      grid-area: mainCentral;
                     display: grid;
