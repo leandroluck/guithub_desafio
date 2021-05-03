@@ -673,14 +673,6 @@ nav {
         grid-template-columns: 40vh;
         grid-template-areas: ". " "asideProfe";
   }
-  .asideProfe {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: asideProfe;
-    display: -ms-grid;
-    display: grid;
-        grid-template-rows: 30vh 10vh;
-  }
   .estiloProfe {
     max-width: 30vh;
     max-height: 30vh;
