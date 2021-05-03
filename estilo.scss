@@ -35,7 +35,7 @@ a{
 
 
 body footer div img{    max-width: 12vh;
-                    height: 12vh;}
+                        height: 12vh;}
 
 
 
@@ -43,7 +43,7 @@ body footer div img{    max-width: 12vh;
 
 body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0.493) , rgba(255, 0, 0, 0.212));} 
 
-
+/*Index*/
 .gridCuerpo{
             display: grid;
             grid-template-rows:25vh 5vh 105vh 5vh 21vh 10vh;
@@ -97,80 +97,19 @@ nav{ font-size: 2vh;
               transition: 2s;}
                    
 
-
-
-
-.gridCuerpoContacto{
-                    display: grid;
-                    grid-template-rows:25vh 5vh 110vh 5vh 21vh 10vh;
-                    grid-template-columns: 100vh;
-                    grid-template-areas:"encabe  "
-                                        "nave"
-                                        "mainCentral "
-                                        "arriba  "
-                                        "footer  "
-                                        ".";}
-
-
-
-
-
-
-/*#gridListaNav{  margin: 0%;
-                padding: 0%;
-                list-style: none;
-                height: 100%;
-                display: grid;
-                grid-area: nave;
-                grid-template-rows:100%;
-                grid-template-columns:20% 20% 20% 20% 20%;
-                justify-items: center;
-                align-items: center;}*/
-
-
-.gridMain{      grid-area: mainCentral;
+.gridMain{  grid-area: mainCentral;
             display: grid;
             grid-template-rows: 105vh;
             grid-template-columns:50vh 50vh ;
             grid-template-areas:"section aside";}  
 
-
-.gridMainHorarios{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows:10vh 90vh;
-                    grid-template-columns:50vh 50vh;
-                    grid-template-areas:" horarios  . "
-                                        " tabla     tabla";} 
-    
-.gridMainContacto{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 120vh;
-                    grid-template-columns:50vh 50vh ;
-                    grid-template-areas:"section aside";}
-
-.tituloHorario{ grid-area: horarios;
-            text-align: center;}
-
-.tablaHorarios{grid-area: tabla;
-            }
-
-                               
-
 .gridSectAside{   grid-area: section;
-              display: grid;
-              grid-template-rows: 10vh 95vh;
-              grid-template-columns:50vh;
-              grid-template-areas:  "titulo  "
-                                    "parrafo";}
+    display: grid;
+    grid-template-rows: 10vh 95vh;
+    grid-template-columns:50vh;
+    grid-template-areas:  "titulo  "
+                          "parrafo";}
 
-.gridSectAsideContacto{ grid-area: section;
-                    display: grid;
-                    grid-template-rows: 10vh 70vh;
-                    grid-template-columns:50vh;
-                    grid-template-areas:  "titulo  "
-                                    "parrafo";}
-
-  
 .titulo{grid-area: titulo; 
     text-align: center;
     margin: auto;}
@@ -178,18 +117,6 @@ nav{ font-size: 2vh;
 .parrafo{grid-area: parrafo;
      margin: 2%;
     text-align: justify;}
-
-.gridParrafoContacto{grid-area: parrafo;
-     margin: 2%;
-    text-align: justify;
-    display: grid;
-    grid-template-rows: 15vh 15vh 15vh 24vh 18vh;}
-
-
-.textoContacto{font-size: 2vh;}
-
-.texareaContacto{height: 20vh;}
-
 
 .gridAsideIndex{ grid-area: aside;
             display: grid;
@@ -199,69 +126,18 @@ nav{ font-size: 2vh;
                                   "asideVideo  "
                                   "parrafoDos";}
 
-.gridAsideVision{ grid-area: aside;
-             display: grid;
-             grid-template-rows: 10vh 90vh ;
-             grid-template-columns:50vh;
-             grid-template-areas:  "titulo  "
-                                    "asideProfe";}
-
-.gridAsideServicios{ grid-area: aside;
-            display: grid;
-            grid-template-rows: 10vh 90vh ;
-            grid-template-columns:50vh;
-            grid-template-areas:  "titulo  "
-                                  "parrafoDos";}
-
-
-.gridAsideContacto{ grid-area: aside;
-              display: grid;
-              grid-template-rows: 10vh 70vh ;
-              grid-template-columns:50vh;
-              grid-template-areas:  "titulo  "
-                                    "asideProfe";}
 
 .asideVideo{    grid-area: asideVideo;
-            display: grid;
-            justify-content: space-evenly }
-
-.asideProfe{    grid-area: asideProfe  ;
-             display: grid;
-            grid-template-rows: 35vh 10vh;}
-
-.cardTex{
-            text-align: center;
-}
-
+                display: grid;
+                justify-content: space-evenly }
 
 .estiloVideo{   max-width: 100%;
-            max-height: 100% ;
-            border: solid  yellow;}
+                max-height: 100% ;
+                border: solid  yellow;}
 
-.profeDimension{height: 100%;
-            width: 100%;}
-
-.estiloProfe{   max-width: 50vh;
-            max-height: 50vh ;
-            border: solid  yellow;
-            display: flex;
-            margin: auto;
-            }
-
-.estiloProfeDos{   max-width: 30vh;
-                max-height: 30vh ;
-               border: solid  yellow;
-               display: flex;
-               margin: auto;}
-.botonAncho{
-            height: 8vh;}
-
-
-.cardAncho{     width: 100%;}
-
-.parrafoDos{grid-area: parrafoDos;
-        margin: 2%;
-        text-align: justify}
+.parrafoDos{    grid-area: parrafoDos;
+                margin: 2%;
+                text-align: justify}
   
 
 .arriba{font-size: 3vh; 
@@ -270,10 +146,7 @@ nav{ font-size: 2vh;
     margin: auto;}
 
 
-.checkCentrado{margin: auto;}        
-    
-#gridFooter{   
-            grid-area: footer;}
+#gridFooter{ grid-area: footer;}
 
 .divFooter{ grid-area: direc;
             text-align: center;}
@@ -310,6 +183,44 @@ nav{ font-size: 2vh;
           font-size: 1.8vh;}
 
 
+/*Vision*/
+.gridAsideVision{   grid-area: aside;
+                    display: grid;
+                    grid-template-rows: 10vh 90vh ;
+                    grid-template-columns:50vh;
+                    grid-template-areas:  "titulo  "
+                                          "asideProfe";}
+
+.asideProfe{    grid-area: asideProfe  ;
+             display: grid;
+            grid-template-rows: 50vh 10vh;}
+
+
+.profeDimension{height: 100%;
+            width: 100%;}
+
+
+.estiloProfe{   max-width: 50vh;
+            max-height: 50vh ;
+            border: solid  yellow;
+            display: flex;
+            margin: auto;}
+
+.cardAncho{     width: 100%;}
+
+.cardTex{
+            text-align: center;}
+
+
+/*Servicios*/
+
+.gridAsideServicios{ grid-area: aside;
+            display: grid;
+            grid-template-rows: 10vh 90vh ;
+            grid-template-columns:50vh;
+            grid-template-areas:  "titulo  "
+                                  "parrafoDos";}
+
 
 .wc{    font-size: 2.2vh;
     color: rgb(131, 175, 106);
@@ -328,6 +239,20 @@ nav{ font-size: 2vh;
     color: rgb(224, 24, 174);
     margin: 2vh;}
 
+/*Horario*/
+
+.gridMainHorarios{      grid-area: mainCentral;
+                    display: grid;
+                    grid-template-rows:10vh 90vh;
+                    grid-template-columns:50vh 50vh;
+                    grid-template-areas:" horarios  . "
+                                        " tabla     tabla";} 
+    
+
+.tituloHorario{ grid-area: horarios;
+            text-align: center;}
+
+.tablaHorarios{grid-area: tabla;}
 
     
 .tablaInd{   grid-area: inicio;
@@ -379,8 +304,62 @@ nav{ font-size: 2vh;
     font-size: 2vh;
     color: rgb(224, 24, 174);}
 
+/* Contacto*/
+.gridCuerpoContacto{
+    display: grid;
+    grid-template-rows:25vh 5vh 110vh 5vh 21vh 10vh;
+    grid-template-columns: 100vh;
+    grid-template-areas:"heade  "
+                        "nave"
+                        "mainCentral "
+                        "arriba  "
+                        "footer  "
+                        ".";}
+
+.gridMainContacto{      grid-area: mainCentral;
+    display: grid;
+    grid-template-rows: 120vh;
+    grid-template-columns:50vh 50vh ;
+    grid-template-areas:"section aside";}
+
+
+.gridParrafoContacto{grid-area: parrafo;
+margin: 2%;
+text-align: justify;
+display: grid;
+grid-template-rows: 15vh 15vh 15vh 24vh 18vh;}
+
+
+.textoContacto{font-size: 2vh;}
+
+.texareaContacto{height: 20vh;}
+
+.gridSectAsideContacto{ grid-area: section;
+display: grid;
+grid-template-rows: 10vh 70vh;
+grid-template-columns:50vh;
+grid-template-areas:  "titulo  "
+    "parrafo";}
+
+.gridAsideContacto{ grid-area: aside;
+display: grid;
+grid-template-rows: 10vh 70vh ;
+grid-template-columns:50vh;
+grid-template-areas:  "titulo  "
+                    "asideProfe";}
+
+.estiloProfeDos{   max-width: 30vh;
+max-height: 30vh ;
+border: solid  yellow;
+display: flex;
+margin: auto;}
+.botonAncho{
+height: 8vh;}
+
+.checkCentrado{margin: auto;}
+
          
-/*index*/
+/*Media-index*/
 @media only screen and (max-width:576px){
 
 body{width: 40vh;}
@@ -411,9 +390,7 @@ body footer div img{max-width: 5vh;
     grid-template-rows: 25vh;
     grid-template-columns: 40vh;}
 
-.gridNavIndex{ /* grid-area:nave ;
-                display: grid;*/
-                grid-template-rows: 12.5vh;
+.gridNavIndex{  grid-template-rows: 12.5vh;
                 grid-column: 40vh;}
 
 .imgHeader{
@@ -457,7 +434,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoMediaVision{
     display: grid;
-    grid-template-rows:25vh 5vh 80vh 5vh 20vh 5vh;
+    grid-template-rows:25vh 12.5vh 80vh 5vh 20vh 5vh;
     grid-template-columns: 40vh;
     grid-template-areas:"heade  "
                         "nave     "
@@ -469,11 +446,11 @@ body footer div img{max-width: 5vh;
 
 
 
-.gridMainMediaVision{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 30vh 50vh;
-                    grid-template-columns:40vh ;
-                    grid-template-areas:"section"
+.gridMainMediaVision{   grid-area: mainCentral;
+                        display: grid;
+                        grid-template-rows: 30vh 50vh;
+                        grid-template-columns:40vh ;
+                        grid-template-areas:"section"
                                 "aside";} 
 
 
@@ -492,6 +469,10 @@ body footer div img{max-width: 5vh;
               grid-template-columns:40vh;
               grid-template-areas:  ". "
                                     "asideProfe";}
+                        
+.asideProfe{    grid-area: asideProfe  ;
+             display: grid;
+            grid-template-rows: 30vh 10vh;}
 
 .estiloProfe{   max-width: 30vh;
             max-height: 30vh ;
@@ -500,11 +481,11 @@ body footer div img{max-width: 5vh;
             margin: auto;}
 
 /*Sevicios*/
-.mediaServicios{height: 300vh;}
+.mediaServicios{height: 225vh;}
 
 .gridCuerpoMediaServicios{ 
                         display: grid;
-                        grid-template-rows:25vh 5vh 158vh 5vh 20vh 1vh;
+                        grid-template-rows:25vh 12.5vh 158vh 5vh 20vh 1vh;
                         grid-template-columns: 40vh;
                         grid-template-areas:"heade  "
                                             "nave     "
@@ -557,7 +538,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoMediaHorario{
                     display: grid;
-                    grid-template-rows:25vh 5vh 100vh 5vh 21vh 1vh;
+                    grid-template-rows:25vh 12.5vh 100vh 5vh 21vh 1vh;
                     grid-template-columns: 40vh;
                     grid-template-areas:"heade  "
                                     "nave     "
@@ -629,15 +610,15 @@ body footer div img{max-width: 5vh;
 .mediaContacto{height: 200vh;}
 
 .gridCuerpoContacto{
-    display: grid;
-    grid-template-rows:25vh 5vh 160vh 5vh 21vh 1vh;
-    grid-template-columns: 40vh;
-    grid-template-areas:"heade  "
-                    "nave     "
-                    "mainCentral "
-                    "arriba  "
-                    "footer  "
-                    ".";}
+                        display: grid;
+                        grid-template-rows:25vh 12.5vh 160vh 5vh 21vh 1vh;
+                        grid-template-columns: 40vh;
+                        grid-template-areas:"heade  "
+                                            "nave     "
+                                            "mainCentral "
+                                            "arriba  "
+                                            "footer  "
+                                            ".";}
 
 .gridMainContacto{      grid-area: mainCentral;
                     display: grid;
