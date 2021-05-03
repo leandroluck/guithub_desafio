@@ -192,7 +192,7 @@ nav{ font-size: 2vh;
 
 .asideProfe{    grid-area: asideProfe  ;
              display: grid;
-            grid-template-rows: 35vh 10vh;}
+            grid-template-rows: 50vh 10vh;}
 
 .profeDimension{height: 100%;
             width: 100%;}
@@ -208,115 +208,13 @@ nav{ font-size: 2vh;
 .cardTex{
             text-align: center;}
 
-
-
-
-
-
-
-.gridMainHorarios{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows:10vh 90vh;
-                    grid-template-columns:50vh 50vh;
-                    grid-template-areas:" horarios  . "
-                                        " tabla     tabla";} 
-    
-.gridMainContacto{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 120vh;
-                    grid-template-columns:50vh 50vh ;
-                    grid-template-areas:"section aside";}
-
-.tituloHorario{ grid-area: horarios;
-            text-align: center;}
-
-.tablaHorarios{grid-area: tabla;
-            }
-
-                            
-
-.gridCuerpoContacto{
-                    display: grid;
-                    grid-template-rows:25vh 5vh 110vh 5vh 21vh 10vh;
-                    grid-template-columns: 100vh;
-                    grid-template-areas:"encabe  "
-                                        "nave"
-                                        "mainCentral "
-                                        "arriba  "
-                                        "footer  "
-                                        ".";}
-
-
-.gridSectAsideContacto{ grid-area: section;
-                    display: grid;
-                    grid-template-rows: 10vh 70vh;
-                    grid-template-columns:50vh;
-                    grid-template-areas:  "titulo  "
-                                    "parrafo";}
-
-  
-
-
-.gridParrafoContacto{grid-area: parrafo;
-     margin: 2%;
-    text-align: justify;
-    display: grid;
-    grid-template-rows: 15vh 15vh 15vh 24vh 18vh;}
-
-
-.textoContacto{font-size: 2vh;}
-
-.texareaContacto{height: 20vh;}
-
-
-
-
-
+/*Servicios*/
 .gridAsideServicios{ grid-area: aside;
-            display: grid;
-            grid-template-rows: 10vh 90vh ;
-            grid-template-columns:50vh;
-            grid-template-areas:  "titulo  "
-                                  "parrafoDos";}
-
-
-.gridAsideContacto{ grid-area: aside;
-              display: grid;
-              grid-template-rows: 10vh 70vh ;
-              grid-template-columns:50vh;
-              grid-template-areas:  "titulo  "
-                                    "asideProfe";}
-
-
-
-
-
-
-
-
-
-.estiloProfeDos{   max-width: 30vh;
-                max-height: 30vh ;
-               border: solid  yellow;
-               display: flex;
-               margin: auto;}
-.botonAncho{
-            height: 8vh;}
-
-
-
-
-
-  
-
-
-
-
-.checkCentrado{margin: auto;}        
-    
-
-
-
+    display: grid;
+    grid-template-rows: 10vh 90vh ;
+    grid-template-columns:50vh;
+    grid-template-areas:  "titulo  "
+                          "parrafoDos";}
 
 .wc{    font-size: 2.2vh;
     color: rgb(131, 175, 106);
@@ -336,7 +234,21 @@ nav{ font-size: 2vh;
     margin: 2vh;}
 
 
-    
+/*HORARIOS*/
+
+.gridMainHorarios{      grid-area: mainCentral;
+                    display: grid;
+                    grid-template-rows:10vh 90vh;
+                    grid-template-columns:50vh 50vh;
+                    grid-template-areas:" horarios  . "
+                                        " tabla     tabla";} 
+ 
+.tituloHorario{ grid-area: horarios;
+                 margin: auto;}
+
+.tablaHorarios{grid-area: tabla;}
+
+
 .tablaInd{   grid-area: inicio;
             display: grid;
             grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
@@ -385,6 +297,97 @@ nav{ font-size: 2vh;
     text-align: center;
     font-size: 2vh;
     color: rgb(224, 24, 174);}
+
+/*Contactos*/
+
+.gridMainContacto{      grid-area: mainCentral;
+                    display: grid;
+                    grid-template-rows: 120vh;
+                    grid-template-columns:50vh 50vh ;
+                    grid-template-areas:"section aside";}                           
+
+.gridCuerpoContacto{
+                    display: grid;
+                    grid-template-rows:25vh 5vh 110vh 5vh 21vh 10vh;
+                    grid-template-columns: 100vh;
+                    grid-template-areas:"heade  "
+                                        "nave"
+                                        "mainCentral "
+                                        "arriba  "
+                                        "footer  "
+                                        ".";}
+
+
+.gridSectAsideContacto{ grid-area: section;
+                    display: grid;
+                    grid-template-rows: 10vh 70vh;
+                    grid-template-columns:50vh;
+                    grid-template-areas:  "titulo  "
+                                    "parrafo";}
+
+  
+
+
+.gridParrafoContacto{grid-area: parrafo;
+     margin: 2%;
+    text-align: justify;
+    display: grid;
+    grid-template-rows: 15vh 15vh 15vh 24vh 18vh;}
+
+
+.textoContacto{font-size: 2vh;}
+
+.texareaContacto{height: 20vh;}
+
+
+
+
+
+
+
+
+.gridAsideContacto{ grid-area: aside;
+              display: grid;
+              grid-template-rows: 10vh 70vh ;
+              grid-template-columns:50vh;
+              grid-template-areas:  "titulo  "
+                                    "asideProfe";}
+
+
+
+
+
+
+
+
+
+.estiloProfeDos{   max-width: 30vh;
+                max-height: 30vh ;
+               border: solid  yellow;
+               display: flex;
+               margin: auto;}
+.botonAncho{
+            height: 8vh;}
+
+
+
+
+
+  
+
+
+
+
+.checkCentrado{margin: auto;}        
+    
+
+
+
+
+
+
+
+    
 
          
 /*index*/
@@ -442,10 +445,6 @@ body footer div img{max-width: 5vh;
                justify-items: center;
                 align-items: center;}
 
-
-
-
-
 .gridMain{      grid-area: mainCentral;
             display: grid;
             grid-template-rows: 80vh 60vh;
@@ -497,6 +496,11 @@ body footer div img{max-width: 5vh;
               grid-template-areas:  ". "
                                     "asideProfe";}
 
+.asideProfe{    grid-area: asideProfe  ;
+             display: grid;
+            grid-template-rows: 30vh 10vh;}
+
+
 .estiloProfe{   max-width: 30vh;
             max-height: 30vh ;
             border: solid  yellow;
@@ -508,7 +512,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoMediaServicios{ 
                         display: grid;
-                        grid-template-rows:25vh 5vh 158vh 5vh 20vh 1vh;
+                        grid-template-rows:25vh 12.5vh 158vh 5vh 20vh 1vh;
                         grid-template-columns: 40vh;
                         grid-template-areas:"heade  "
                                             "nave     "
@@ -561,7 +565,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoMediaHorario{
                     display: grid;
-                    grid-template-rows:25vh 5vh 100vh 5vh 21vh 1vh;
+                    grid-template-rows:25vh 12.5vh 100vh 5vh 21vh 1vh;
                     grid-template-columns: 40vh;
                     grid-template-areas:"heade  "
                                     "nave     "
@@ -574,7 +578,7 @@ body footer div img{max-width: 5vh;
                     display: grid;
                     grid-template-rows:10vh 90vh;
                     grid-template-columns:20vh 20vh;
-                    grid-template-areas:" horarios  . "
+                    grid-template-areas:" horarios  horarios "
                                         " tabla     tabla";} 
 
 
@@ -634,7 +638,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoContacto{
     display: grid;
-    grid-template-rows:25vh 5vh 160vh 5vh 21vh 1vh;
+    grid-template-rows:25vh 12.5vh 160vh 5vh 21vh 1vh;
     grid-template-columns: 40vh;
     grid-template-areas:"heade  "
                     "nave     "
