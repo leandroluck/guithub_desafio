@@ -373,7 +373,6 @@ nav {
   margin: auto;
 }
 
-git
 .tablaHorarios {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -392,6 +391,12 @@ git
   color: #666;
 }
 
+/*.tablaInd{  grid-area: inicio;
+            display: grid;
+            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
+            text-align: center;
+            font-size: 2.3vh;
+            color: #666;}*/
 .tablaWc {
   grid-area: uno;
   display: -ms-grid;

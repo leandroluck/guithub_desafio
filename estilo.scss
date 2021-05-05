@@ -1,59 +1,61 @@
 
+@mixin estilosTexto($fontSize , $fondoColor){
+    font-family: 'Bebas Neue', cursive; 
+    font-size: $fontSize;
+    color: $fondoColor;
+    margin: auto;}
 
 body{   width: 100vh;
-    height: 170vh;
-    font-family: 'Oswald', sans-serif;
-    background-color: #fff5e1;
-    margin: auto;}             
+        height: 170vh;
+        font-family: 'Oswald', sans-serif;
+        background-color: #fff5e1;
+        margin: auto;}             
 
 
-h1{ 
-    font-family: 'Bebas Neue', cursive; 
-    font-size: 5vh;
-    color: #ec2027;
-    margin: auto; }
+h1{ @include estilosTexto(5vh, #ec2027 );}
 
-h2{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 4vh;
-    color: #000;}
+h2{ @include estilosTexto(4vh, #000 );}
 
-h3{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3vh;
-    color: #000;}
+h3{ @include estilosTexto(3vh, #000 );}
 
-p{      font-family: 'Bebas Neue', cursive;
+p{  font-family: 'Bebas Neue', cursive;
     font-size: 2vh;}
 
 
-a{
-    font-weight:bold;
+a{  font-weight:bold;
     color: #666;}
 
-
-
-
 body footer div img{    max-width: 12vh;
-                    height: 12vh;}
-
-
-
-
+                        height: 12vh;}
 
 body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0.493) , rgba(255, 0, 0, 0.212));} 
 
+@mixin gridCuerpo ($gridTemplateRows , $gridTemplateColumns , $gridTemplateAreas){
+                display: grid;
+                grid-template-rows:$gridTemplateRows;
+                grid-template-columns:$gridTemplateColumns;
+                grid-template-areas:$gridTemplateAreas;}
+
+@mixin gridListaNav ($altura , $gridTemplateRowsDos , $gridTemplateColumnsDos) {
+                margin: 0%;
+                padding: 0%;
+                list-style: none;
+                height: $altura;
+                display: grid;
+                grid-template-rows: $gridTemplateRowsDos;
+                grid-template-columns: $gridTemplateColumnsDos;
+                justify-items: center;
+                align-items: center;}
+
+
 /*INDEX*/
-.gridCuerpo{
-            display: grid;
-            grid-template-rows:25vh 5vh 105vh 5vh 21vh 10vh;
-            grid-template-columns: 100vh;
-            grid-template-areas:"heade  "
-                                "nave     "
-                                "mainCentral "
-                                "arriba  "
-                                "footer  "
-                                 ".";}
+.gridCuerpo{ @include gridCuerpo(25vh 5vh 105vh 5vh 21vh 10vh, 100vh ,
+    "heade  "
+    "nave     "
+    "mainCentral "
+    "arriba  "
+    "footer  "
+     "." );}
 
 
 .gridHeaderIndex{   grid-area: heade;
@@ -78,15 +80,7 @@ body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0
                 grid-template-rows: 5vh;
                 grid-column: 100vh;}
 
-.gridListaNav{  margin: 0%;
-                padding: 0%;
-                list-style: none;
-                height: 5vh;
-                display: grid;
-                grid-template-rows:100%;
-                grid-template-columns:20% 20% 20% 20% 20%;
-                justify-items: center;
-                align-items: center;}
+.gridListaNav{ @include gridListaNav(5vh,100% ,20% 20% 20% 20% 20% );}
 
 nav{ font-size: 2vh;
      grid-area: nav;
@@ -97,17 +91,17 @@ nav{ font-size: 2vh;
               transition: 2s;}
                    
 
-.gridMain{      grid-area: mainCentral;
+.gridMain{  grid-area: mainCentral;
             display: grid;
             grid-template-rows: 105vh;
             grid-template-columns:50vh 50vh ;
             grid-template-areas:"section aside";}  
 
-.gridSectAside{   grid-area: section;
-              display: grid;
-              grid-template-rows: 10vh 95vh;
-              grid-template-columns:50vh;
-              grid-template-areas:  "titulo  "
+.gridSectAside{ grid-area: section;
+                display: grid;
+                grid-template-rows: 10vh 95vh;
+                grid-template-columns:50vh;
+                grid-template-areas:"titulo  "
                                     "parrafo";}
 
 .titulo{grid-area: titulo; 
@@ -118,11 +112,11 @@ nav{ font-size: 2vh;
      margin: 2%;
     text-align: justify;}
 
-.gridAsideIndex{ grid-area: aside;
-            display: grid;
-            grid-template-rows: 10vh 30vh 70vh ;
-            grid-template-columns:50vh;
-            grid-template-areas:  "titulo  "
+.gridAsideIndex{grid-area: aside;
+                display: grid;
+                grid-template-rows: 10vh 30vh 70vh ;
+                grid-template-columns:50vh;
+                grid-template-areas:  "titulo  "
                                   "asideVideo  "
                                   "parrafoDos";}
 
@@ -184,24 +178,24 @@ nav{ font-size: 2vh;
 
 /*VISION*/
 .gridAsideVision{ grid-area: aside;
-    display: grid;
-    grid-template-rows: 10vh 90vh ;
-    grid-template-columns:50vh;
-    grid-template-areas:  "titulo  "
-                           "asideProfe";}
+                  display: grid;
+                  grid-template-rows: 10vh 90vh ;
+                  grid-template-columns:50vh;
+                  grid-template-areas:  "titulo  "
+                                        "asideProfe";}
 
 .asideProfe{    grid-area: asideProfe  ;
              display: grid;
             grid-template-rows: 50vh 10vh;}
 
 .profeDimension{height: 100%;
-            width: 100%;}
+                width: 100%;}
 
 .estiloProfe{   max-width: 50vh;
-            max-height: 50vh ;
-            border: solid  yellow;
-            display: flex;
-            margin: auto; }
+                max-height: 50vh ;
+                border: solid  yellow;
+                display: flex;
+                margin: auto; }
 
 .cardAncho{     width: 100%;}
 
@@ -216,27 +210,24 @@ nav{ font-size: 2vh;
     grid-template-areas:  "titulo  "
                           "parrafoDos";}
 
-.wc{    font-size: 2.2vh;
-    color: rgb(131, 175, 106);
+@mixin colorServicios($colorLetras) {
+    font-size: 2.2vh;
+    color:$colorLetras;
     margin: 2vh;}
+
+
+.wc{ @include colorServicios(rgb(131, 175, 106));}
                                 
-.wde{   font-size: 2.2vh;        
-    color: rgb(133, 114, 202);
-    margin: 2vh;}
+.wde{ @include colorServicios(rgb(133, 114, 202));}
                 
-.c{     font-size: 2.2vh;
-    color: rgb(205, 219, 143);
-    margin: 2vh;}
-    
-                
-.ta{    font-size: 2.2vh;
-    color: rgb(224, 24, 174);
-    margin: 2vh;}
+.c{ @include colorServicios(rgb(205, 219, 143));}
+                  
+.ta{ @include colorServicios(rgb(224, 24, 174));}
 
 
 /*HORARIOS*/
 
-.gridMainHorarios{      grid-area: mainCentral;
+.gridMainHorarios{  grid-area: mainCentral;
                     display: grid;
                     grid-template-rows:10vh 90vh;
                     grid-template-columns:50vh 50vh;
@@ -244,78 +235,48 @@ nav{ font-size: 2vh;
                                         " tabla     tabla";} 
  
 .tituloHorario{ grid-area: horarios;
-                 margin: auto;}git 
+                 margin: auto;}
 
 .tablaHorarios{grid-area: tabla;}
 
-
-.tablaInd{   grid-area: inicio;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2.3vh;
-            color: #666;}
-
-.tablaWc{    grid-area: uno;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2vh;
-            color: rgb(131, 175, 106);}
-
-.tablaWcDos{ grid-area: dos;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2vh;
-            color: rgb(131, 175, 106);}
-        
-.tablaWde{   grid-area: tres;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2vh;
-            color: rgb(133, 114, 202);}
-        
-.tablac{     grid-area: cuatro;
-    display: grid;
+@mixin estiloTabla($area , $displ , $gtc , $tamLetra , $colorTabla){
+    grid-area: $area;
+    display: $displ;
     grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
     text-align: center;
-    font-size: 2vh;
-    color: rgb(205, 219, 143);}
+    font-size: $tamLetra;
+    color:$colorTabla;}
 
-.tablacDos{  grid-area: cinco;
-    display: grid;
-    grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-    text-align: center;
-    font-size: 2vh;
-    color: rgb(205, 219, 143);}
+.tablaInd{  @include estiloTabla(inicio, grid, 2.3vh, #666 );}
+
+
+.tablaWc{   @include estiloTabla(uno, grid, 2vh, rgb(131, 175, 106) );}
+
+.tablaWcDos{   @include estiloTabla(dos, grid, 2vh, rgb(131, 175, 106) );}
         
-.tablaTa{    grid-area: seis;
-    display: grid;
-    grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-    text-align: center;
-    font-size: 2vh;
-    color: rgb(224, 24, 174);}
+.tablaWde{  @include estiloTabla(tres, grid, 2vh, rgb(133, 114, 202) );}
+        
+.tablac{    @include estiloTabla(cuatro, grid, 2vh,  rgb(205, 219, 143));}
+
+.tablacDos{ @include estiloTabla(cinco, grid, 2vh, rgb(205, 219, 143));}
+        
+.tablaTa{   @include estiloTabla(seis, grid, 2vh, rgb(224, 24, 174));}
 
 /*Contactos*/
 
-.gridMainContacto{      grid-area: mainCentral;
+.gridMainContacto{  grid-area: mainCentral;
                     display: grid;
                     grid-template-rows: 120vh;
                     grid-template-columns:50vh 50vh ;
                     grid-template-areas:"section aside";}                           
 
-.gridCuerpoContacto{
-                    display: grid;
-                    grid-template-rows:25vh 5vh 110vh 5vh 21vh 10vh;
-                    grid-template-columns: 100vh;
-                    grid-template-areas:"heade  "
-                                        "nave"
-                                        "mainCentral "
-                                        "arriba  "
-                                        "footer  "
-                                        ".";}
+.gridCuerpoContacto{@include gridCuerpo(25vh 5vh 110vh 5vh 21vh 10vh,100vh ,
+    "heade  "
+    "nave"
+    "mainCentral "
+    "arriba  "
+    "footer  "
+    ".")}
 
 
 .gridSectAsideContacto{ grid-area: section;
@@ -324,9 +285,6 @@ nav{ font-size: 2vh;
                     grid-template-columns:50vh;
                     grid-template-areas:  "titulo  "
                                     "parrafo";}
-
-  
-
 
 .gridParrafoContacto{grid-area: parrafo;
      margin: 2%;
@@ -340,25 +298,12 @@ nav{ font-size: 2vh;
 .texareaContacto{height: 20vh;}
 
 
-
-
-
-
-
-
 .gridAsideContacto{ grid-area: aside;
               display: grid;
               grid-template-rows: 10vh 70vh ;
               grid-template-columns:50vh;
               grid-template-areas:  "titulo  "
                                     "asideProfe";}
-
-
-
-
-
-
-
 
 
 .estiloProfeDos{   max-width: 30vh;
@@ -369,33 +314,12 @@ nav{ font-size: 2vh;
 .botonAncho{
             height: 8vh;}
 
-
-
-
-
-  
-
-
-
-
 .checkCentrado{margin: auto;}        
-    
-
-
-
-
-
-
-
-    
-
          
 /*index*/
 @media only screen and (max-width:576px){
 
 body{width: 40vh;}
-
-
 
 body footer div img{max-width: 5vh;
                height: 5vh;}
@@ -417,13 +341,11 @@ body footer div img{max-width: 5vh;
                                  ".";}
 
 .gridHeaderIndex{   grid-area: heade;
-    display: grid;
-    grid-template-rows: 25vh;
-    grid-template-columns: 40vh;}
+                    display: grid;
+                    grid-template-rows: 25vh;
+                    grid-template-columns: 40vh;}
 
-.gridNavIndex{ /* grid-area:nave ;
-                display: grid;*/
-                grid-template-rows: 12.5vh;
+.gridNavIndex{  grid-template-rows: 12.5vh;
                 grid-column: 40vh;}
 
 .imgHeader{
@@ -435,15 +357,7 @@ body footer div img{max-width: 5vh;
             justify-items: center;}
 
 
-.gridListaNav{  margin: 0%;
-                padding: 0%;
-                list-style: none;
-                height: 100%;
-                display: grid;
-                grid-template-rows:2.5vh 2.5vh 2.5vh 2.5vh 2.5vh;
-                grid-template-columns:100%;
-               justify-items: center;
-                align-items: center;}
+.gridListaNav{  @include gridListaNav(100%, 2.5vh 2.5vh 2.5vh 2.5vh 2.5vh, 100%);}
 
 .gridMain{      grid-area: mainCentral;
             display: grid;
