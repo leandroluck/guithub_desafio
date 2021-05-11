@@ -25,8 +25,8 @@ p{  font-family: 'Bebas Neue', cursive;
 a{  font-weight:bold;
     color: #666;}
 
-body footer div img{    max-width: 12vh;
-                        height: 12vh;}
+body footer div img{    max-width: 10vh;
+                        height: 10vh;}
 
 body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0.493) , rgba(255, 0, 0, 0.212));} 
 
@@ -130,42 +130,40 @@ nav{ font-size: 2vh;
             text-align: center;
             margin: auto;}
 
-
-#gridFooter{ grid-area: footer;}
+#gridFooter{ @include gridMain(footer,1vh 3vh 1vh 11vh 1vh 3vh 1vh ,10vh 20vh 40vh 20vh 10vh , " .     .          .        .     ."
+            " .   direc       direc     direc ." 
+            " .      .         .         .      ."
+            " .    inst      logo       face  . "
+            " .     .          .        .     ."
+            " .    dise      dise     dise    ."
+            " .     .          .        .     .");}
 
 .divFooter{ grid-area: direc;
             text-align: center;}
 
 .direccion{font-size: 1.8vh;}
-
-.altoUno{height: 3vh;}
                         
-.altoDos{height: 5vh;}
-                        
-.altoTres{height: 15vh;}
-                        
-.altoCuatro{height: 4vh;}
-                        
-.divLogo{    grid-area: logo;
+.divLogo{   grid-area: logo;
             text-align: center;}
                         
-.inst{   grid-area: inst;
+.inst{  margin: auto;
+        grid-area: inst;
         text-align: center;}
                         
 .logoInst{ height: 6vh;
             width: 6vh;}
                         
-.face{ grid-area: face;
-       text-align: center;}
+.face{  margin: auto;
+        grid-area: face;
+        text-align: center;}
                         
 .logoFace{ height: 6vh;
            width: 6vh;}
                         
-.dise{  grid-area: crea;
+.dise{  grid-area: dise;
         text-align: center;}
                         
-.creador{ margin: 4vh 0 0 0 ;
-          font-size: 1.8vh;}
+.creador{ font-size: 1.8vh;}
 
 /*VISION*/
 .gridAsideVision{ @include gridMain(aside,10vh 90vh,50vh ,"titulo"
@@ -330,7 +328,38 @@ body footer div img{max-width: 5vh;
                                                             "aside" );} 
 
 .gridAsideIndex{ @include gridMain(aside, 20vh 30vh, 40vh, "parrafoDos  "
-                                                                "asideVideo");}
+                                                           "asideVideo");}
+
+
+#gridFooter{ @include gridMain(footer, 1vh 1.5vh 1vh 5vh .5vh 3.5vh 1vh 3.5vh 1vh 1.5vh 1vh ,2.5vh 35vh 2.5vh ,                   "     .          .        .     "
+                    "    direc      direc     direc " 
+                    "     .           .         .   "
+                    "     .         logo        .   "
+                    "     .           .         .   "
+                    "     .         inst        .   "
+                    "     .           .         .   "
+                    "     .         face        .   "
+                    "     .           .         .   "
+                    "    dise       dise        dise "
+                    "     .          .          .    ");}
+
+.logoInst{  margin: auto;
+            height: 2.5vh;
+            width: 2.5vh;}
+
+                                                
+.logoFace{ margin: auto;
+            height: 2.5vh;
+            width: 2.5vh;}
+
+.creador{   font-size: 1vh;
+            margin:auto;}
+
+.arriba{font-size: 2vh;}
+
+.direccion{font-size: 1vh;}
+
+
 /*Vision*/
 .mediaVision{height: 80vh;}
 
@@ -368,7 +397,7 @@ body footer div img{max-width: 5vh;
                 margin: auto;}
 
 /*Sevicios*/
-.mediaServicios{height: 300vh;}
+.mediaServicios{height: 225vh;}
 
 .gridCuerpoMediaServicios{ 
                         display: grid;
@@ -409,7 +438,7 @@ body footer div img{max-width: 5vh;
 
 /*Horarios*/
 
-.mediaHorarios{height: 100vh;}
+.mediaHorarios{height: 160vh;}
 
 .gridCuerpoMediaHorario{
                     display: grid;
@@ -451,7 +480,7 @@ body footer div img{max-width: 5vh;
 
 /*Contacto*/
 
-.mediaContacto{height: 200vh;}
+.mediaContacto{height: 190vh;}
 
 .gridCuerpoContacto{
     display: grid;
@@ -471,19 +500,7 @@ body footer div img{max-width: 5vh;
     "parrafo");}
 
 
-.logoInst{ height: 2vh;
-       width: 2vh;}
 
-                                                
-.logoFace{ height: 2vh;
-       width: 2vh;}
-
-.creador{ font-size: 1vh;
-    margin:0;}
-
-.arriba{font-size: 2vh;}
-
-.direccion{font-size: 1vh;}
 
 
 }

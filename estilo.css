@@ -38,8 +38,8 @@ a {
 }
 
 body footer div img {
-  max-width: 12vh;
-  height: 12vh;
+  max-width: 10vh;
+  height: 10vh;
 }
 
 body div footer {
@@ -216,9 +216,17 @@ nav {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: footer;
+  display: -ms-grid;
+  display: grid;
+      grid-template-rows: 1vh 3vh 1vh 11vh 1vh 3vh 1vh;
+      grid-template-columns: 10vh 20vh 40vh 20vh 10vh;
+      grid-template-areas: " .     .          .        .     ." " .   direc       direc     direc ." " .      .         .         .      ." " .    inst      logo       face  . " " .     .          .        .     ." " .    dise      dise     dise    ." " .     .          .        .     .";
 }
 
 .divFooter {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
   grid-area: direc;
   text-align: center;
 }
@@ -227,28 +235,17 @@ nav {
   font-size: 1.8vh;
 }
 
-.altoUno {
-  height: 3vh;
-}
-
-.altoDos {
-  height: 5vh;
-}
-
-.altoTres {
-  height: 15vh;
-}
-
-.altoCuatro {
-  height: 4vh;
-}
-
 .divLogo {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
   grid-area: logo;
   text-align: center;
 }
 
 .inst {
+  margin: auto;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
   grid-area: inst;
   text-align: center;
 }
@@ -259,6 +256,9 @@ nav {
 }
 
 .face {
+  margin: auto;
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
   grid-area: face;
   text-align: center;
 }
@@ -269,12 +269,14 @@ nav {
 }
 
 .dise {
-  grid-area: crea;
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: dise;
   text-align: center;
 }
 
 .creador {
-  margin: 4vh 0 0 0;
   font-size: 1.8vh;
 }
 
@@ -635,6 +637,36 @@ nav {
         grid-template-columns: 40vh;
         grid-template-areas: "parrafoDos  " "asideVideo";
   }
+  #gridFooter {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: footer;
+    display: -ms-grid;
+    display: grid;
+        grid-template-rows: 1vh 1.5vh 1vh 5vh 0.5vh 3.5vh 1vh 3.5vh 1vh 1.5vh 1vh;
+        grid-template-columns: 2.5vh 35vh 2.5vh;
+        grid-template-areas: "     .          .        .     " "    direc      direc     direc " "     .           .         .   " "     .         logo        .   " "     .           .         .   " "     .         inst        .   " "     .           .         .   " "     .         face        .   " "     .           .         .   " "    dise       dise        dise " "     .          .          .    ";
+  }
+  .logoInst {
+    margin: auto;
+    height: 2.5vh;
+    width: 2.5vh;
+  }
+  .logoFace {
+    margin: auto;
+    height: 2.5vh;
+    width: 2.5vh;
+  }
+  .creador {
+    font-size: 1vh;
+    margin: auto;
+  }
+  .arriba {
+    font-size: 2vh;
+  }
+  .direccion {
+    font-size: 1vh;
+  }
   /*Vision*/
   .mediaVision {
     height: 80vh;
@@ -698,7 +730,7 @@ nav {
   }
   /*Sevicios*/
   .mediaServicios {
-    height: 300vh;
+    height: 225vh;
   }
   .gridCuerpoMediaServicios {
     display: -ms-grid;
@@ -767,7 +799,7 @@ nav {
   }
   /*Horarios*/
   .mediaHorarios {
-    height: 100vh;
+    height: 160vh;
   }
   .gridCuerpoMediaHorario {
     display: -ms-grid;
@@ -826,7 +858,7 @@ nav {
   }
   /*Contacto*/
   .mediaContacto {
-    height: 200vh;
+    height: 190vh;
   }
   .gridCuerpoContacto {
     display: -ms-grid;
@@ -860,24 +892,6 @@ nav {
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
         grid-template-areas: "titulo  " "parrafo";
-  }
-  .logoInst {
-    height: 2vh;
-    width: 2vh;
-  }
-  .logoFace {
-    height: 2vh;
-    width: 2vh;
-  }
-  .creador {
-    font-size: 1vh;
-    margin: 0;
-  }
-  .arriba {
-    font-size: 2vh;
-  }
-  .direccion {
-    font-size: 1vh;
   }
 }
 /*# sourceMappingURL=estilo.css.map */
