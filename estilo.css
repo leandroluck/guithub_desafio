@@ -17,12 +17,14 @@ h2 {
   font-family: 'Bebas Neue', cursive;
   font-size: 4vh;
   color: #000;
+  margin: auto;
 }
 
 h3 {
   font-family: 'Bebas Neue', cursive;
   font-size: 3vh;
   color: #000;
+  margin: auto;
 }
 
 p {
@@ -53,7 +55,7 @@ body div footer {
       grid-template-rows: 25vh 5vh 105vh 5vh 21vh 10vh;
   -ms-grid-columns: 100vh;
       grid-template-columns: 100vh;
-      grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
+      grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
 }
 
 .gridHeaderIndex {
@@ -67,7 +69,7 @@ body div footer {
 }
 
 .imgHeader {
-  width: 100%;
+  width: 100vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 10vh 80vh 10vh;
@@ -144,7 +146,7 @@ nav {
   display: grid;
       grid-template-rows: 10vh 95vh;
       grid-template-columns: 50vh;
-      grid-template-areas: "titulo  " "parrafo";
+      grid-template-areas: "titulo  " "parrafo";
 }
 
 .titulo {
@@ -173,7 +175,7 @@ nav {
       grid-template-rows: 10vh 30vh 70vh;
   -ms-grid-columns: 50vh;
       grid-template-columns: 50vh;
-      grid-template-areas: "titulo  " "asideVideo  " "parrafoDos";
+      grid-template-areas: "titulo  " "asideVideo" "parrafoDos";
 }
 
 .asideVideo {
@@ -287,7 +289,7 @@ nav {
       grid-template-rows: 10vh 90vh;
   -ms-grid-columns: 50vh;
       grid-template-columns: 50vh;
-      grid-template-areas: "titulo  " "asideProfe";
+      grid-template-areas: "titulo" "asideProfe";
 }
 
 .asideProfe {
@@ -333,7 +335,7 @@ nav {
       grid-template-rows: 10vh 90vh;
   -ms-grid-columns: 50vh;
       grid-template-columns: 50vh;
-      grid-template-areas: "titulo  " "parrafoDos";
+      grid-template-areas: "titulo" "parrafoDos";
 }
 
 .wc {
@@ -369,7 +371,7 @@ nav {
   display: grid;
       grid-template-rows: 10vh 90vh;
       grid-template-columns: 50vh 50vh;
-      grid-template-areas: " horarios  . " " tabla     tabla";
+      grid-template-areas: " horarios  . " " tabla     tabla";
 }
 
 .tituloHorario {
@@ -394,7 +396,7 @@ nav {
       grid-template-columns: 10vh 10vh 15vh 40vh 10vh 15vh;
   text-align: center;
   font-size: 2.3vh;
-  color: #666;
+  color: #666666;
 }
 
 .tablaWc {
@@ -482,7 +484,7 @@ nav {
       grid-template-rows: 25vh 5vh 130vh 5vh 21vh 10vh;
   -ms-grid-columns: 100vh;
       grid-template-columns: 100vh;
-      grid-template-areas: "heade  " "nave" "mainCentral " "arriba  " "footer  " ".";
+      grid-template-areas: "heade  " "nave" "mainCentral " "arriba  " "footer  " ".";
 }
 
 .gridSectAsideContacto {
@@ -493,9 +495,9 @@ nav {
   display: grid;
   -ms-grid-rows: 10vh 70vh;
       grid-template-rows: 10vh 70vh;
-  -ms-grid-columns: 20vh 60vh 20vh;
-      grid-template-columns: 20vh 60vh 20vh;
-      grid-template-areas: ". titulo . " ". parrafo .";
+  -ms-grid-columns: 20vh 50vh 20vh;
+      grid-template-columns: 20vh 50vh 20vh;
+      grid-template-areas: ". titulo . " ". parrafo . ";
 }
 
 .gridParrafoContacto {
@@ -528,7 +530,7 @@ nav {
       grid-template-rows: 10vh 70vh;
   -ms-grid-columns: 50vh;
       grid-template-columns: 50vh;
-      grid-template-areas: "titulo  " "asideProfe";
+      grid-template-areas: "titulo  " "asideProfe";
 }
 
 .estiloProfeDos {
@@ -549,7 +551,7 @@ nav {
   margin: auto;
 }
 
-/*index*/
+/*medias queries*/
 @media only screen and (max-width: 576px) {
   body {
     width: 40vh;
@@ -581,8 +583,6 @@ nav {
         grid-template-columns: 40vh;
   }
   .gridNavIndex {
-    /* grid-area:nave ;
-                display: grid;*/
     -ms-grid-rows: 12.5vh;
         grid-template-rows: 12.5vh;
     -ms-grid-column: 40;
@@ -623,7 +623,7 @@ nav {
     display: grid;
         grid-template-rows: 80vh 60vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "section" "aside";
+        grid-template-areas: "section" "aside";
   }
   .gridAsideIndex {
     -ms-grid-row: 2;
@@ -633,7 +633,7 @@ nav {
     display: grid;
         grid-template-rows: 20vh 30vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "parrafoDos  " "asideVideo";
+        grid-template-areas: "parrafoDos  " "asideVideo";
   }
   /*Vision*/
   .mediaVision {
@@ -656,7 +656,7 @@ nav {
     display: grid;
         grid-template-rows: 30vh 50vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "section" "aside";
+        grid-template-areas: "section" "aside";
   }
   .gridSectAside {
     -ms-grid-row: 1;
@@ -666,7 +666,7 @@ nav {
     display: grid;
         grid-template-rows: 10vh 60vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "titulo  " "parrafo";
+        grid-template-areas: "titulo  " "parrafo";
   }
   .gridAsideVision {
     -ms-grid-row: 2;
@@ -676,7 +676,7 @@ nav {
     display: grid;
         grid-template-rows: 5vh 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: ". " "asideProfe";
+        grid-template-areas: ". " "asideProfe";
   }
   .asideProfe {
     -ms-grid-row: 2;
@@ -684,6 +684,7 @@ nav {
     grid-area: asideProfe;
     display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 30vh 10vh;
         grid-template-rows: 30vh 10vh;
   }
   .estiloProfe {
@@ -716,7 +717,7 @@ nav {
     display: grid;
         grid-template-rows: 88vh 70vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "section" "aside";
+        grid-template-areas: "section" "aside";
   }
   .gridSectAside {
     -ms-grid-row: 1;
@@ -726,7 +727,7 @@ nav {
     display: grid;
         grid-template-rows: 10vh 100vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "titulo  " "parrafo";
+        grid-template-areas: "titulo  " "parrafo";
   }
   .gridAsideServicios {
     -ms-grid-row: 2;
@@ -736,7 +737,7 @@ nav {
     display: grid;
         grid-template-rows: 1vh 69vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "titulo  " "parrafoDos";
+        grid-template-areas: "titulo  " "parrafoDos";
   }
   .mediaParrafo {
     -ms-grid-row: 2;
@@ -778,84 +779,50 @@ nav {
         grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
   }
   .gridMainHorarios {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: mainCentral;
+    grid-area: maincentral;
     display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 10vh 90vh;
         grid-template-rows: 10vh 90vh;
+    -ms-grid-columns: 20vh 20vh;
         grid-template-columns: 20vh 20vh;
-        grid-template-areas: " horarios  horarios " " tabla     tabla";
+        grid-template-areas: " horarios  horarios " " tabla     tabla";
   }
   .tablaInd {
-    grid-area: inicio;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-    text-align: center;
     font-size: 1.8vh;
-    color: #666;
   }
   .tablaWc {
-    grid-area: uno;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-    text-align: center;
     font-size: 1.3vh;
-    color: #83af6a;
   }
   .tablaWcDos {
-    grid-area: dos;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-    text-align: center;
     font-size: 1.3vh;
-    color: #83af6a;
   }
   .tablaWde {
-    grid-area: tres;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-    text-align: center;
     font-size: 1.3vh;
-    color: #8572ca;
   }
   .tablac {
-    grid-area: cuatro;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-    text-align: center;
     font-size: 1.3vh;
-    color: #cddb8f;
   }
   .tablacDos {
-    grid-area: cinco;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-    text-align: center;
     font-size: 1.3vh;
-    color: #cddb8f;
   }
   .tablaTa {
-    grid-area: seis;
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
         grid-template-columns: 4.5vh 6vh 6vh 9.5vh 9vh 5vh;
     text-align: center;
     font-size: 1.3vh;
-    color: #e018ae;
   }
   /*Contacto*/
   .mediaContacto {
@@ -864,8 +831,8 @@ nav {
   .gridCuerpoContacto {
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 25vh 12.5vh 115vh 5vh 21vh 1vh;
-        grid-template-rows: 25vh 12.5vh 115vh 5vh 21vh 1vh;
+    -ms-grid-rows: 25vh 12.5vh 160vh 5vh 21vh 1vh;
+        grid-template-rows: 25vh 12.5vh 160vh 5vh 21vh 1vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
         grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
@@ -880,7 +847,7 @@ nav {
         grid-template-rows: 85vh 80vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "section" "aside";
+        grid-template-areas: "section" "aside";
   }
   .gridSectAsideContacto {
     -ms-grid-row: 1;
@@ -892,21 +859,8 @@ nav {
         grid-template-rows: 10vh 70vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
-        grid-template-areas: "titulo  " "parrafo";
+        grid-template-areas: "titulo  " "parrafo";
   }
-  .gridAsideContacto {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: aside;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: 10vh 70vh;
-        grid-template-rows: 10vh 70vh;
-    -ms-grid-columns: 40vh;
-        grid-template-columns: 40vh;
-        grid-template-areas: "titulo  " "asideProfe";
-  }
-  /*Footer - todos*/
   .logoInst {
     height: 2vh;
     width: 2vh;

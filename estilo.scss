@@ -6,59 +6,61 @@
     margin: auto;}
 
 body{   width: 100vh;
-    height: 170vh;
-    font-family: 'Oswald', sans-serif;
-    background-color: #fff5e1;
-    margin: auto;}             
+        height: 170vh;
+        font-family: 'Oswald', sans-serif;
+        background-color: #fff5e1;
+        margin: auto;}             
 
 
-h1{ 
-    font-family: 'Bebas Neue', cursive; 
-    font-size: 5vh;
-    color: #ec2027;
-    margin: auto; }
+h1{ @include estilosTexto(5vh, #ec2027 );}
 
-h2{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 4vh;
-    color: #000;}
+h2{ @include estilosTexto(4vh, #000 );}
 
-h3{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3vh;
-    color: #000;}
+h3{ @include estilosTexto(3vh, #000 );}
 
-p{      font-family: 'Bebas Neue', cursive;
+p{  font-family: 'Bebas Neue', cursive;
     font-size: 2vh;}
 
 
-a{
-    font-weight:bold;
+a{  font-weight:bold;
     color: #666;}
 
-
-
-
 body footer div img{    max-width: 12vh;
-                    height: 12vh;}
-
-
-
-
+                        height: 12vh;}
 
 body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0.493) , rgba(255, 0, 0, 0.212));} 
 
-/*INDEX*/
-.gridCuerpo{
+@mixin gridCuerpo ($gridTemplateRows , $gridTemplateColumns , $gridTemplateAreas){
+                display: grid;
+                grid-template-rows:$gridTemplateRows;
+                grid-template-columns:$gridTemplateColumns;
+                grid-template-areas:$gridTemplateAreas;}
+
+@mixin gridListaNav ($altura , $gridTemplateRowsDos , $gridTemplateColumnsDos) {
+                margin: 0%;
+                padding: 0%;
+                list-style: none;
+                height: $altura;
+                display: grid;
+                grid-template-rows: $gridTemplateRowsDos;
+                grid-template-columns: $gridTemplateColumnsDos;
+                justify-items: center;
+                align-items: center;}
+
+@mixin gridMain ($gridAreaTres, $gridTemplateRowsTres, $gridTemplateColumnsTres, $gridTemplateAreasTres){
+            grid-area:$gridAreaTres;
             display: grid;
-            grid-template-rows:25vh 5vh 105vh 5vh 21vh 10vh;
-            grid-template-columns: 100vh;
-            grid-template-areas:"heade  "
-                                "nave     "
-                                "mainCentral "
-                                "arriba  "
-                                "footer  "
-                                 ".";}
+            grid-template-rows: $gridTemplateRowsTres;
+            grid-template-columns:$gridTemplateColumnsTres;
+            grid-template-areas:$gridTemplateAreasTres;}                
+/*INDEX*/
+.gridCuerpo{ @include gridCuerpo(25vh 5vh 105vh 5vh 21vh 10vh, 100vh ,
+    "heade  "
+    "nave     "
+    "mainCentral "
+    "arriba  "
+    "footer  "
+     "." );}
 
 
 .gridHeaderIndex{   grid-area: heade;
@@ -67,7 +69,7 @@ body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0
                     grid-template-columns: 100vh;}
 
 .imgHeader{
-            width:100%;
+            width:100vh;
             display: grid;
             grid-template-columns:10vh 80vh 10vh;
             grid-template-rows: 25vh;
@@ -83,15 +85,7 @@ body div footer { background-image: linear-gradient(to left, rgba(51, 63, 224, 0
                 grid-template-rows: 5vh;
                 grid-column: 100vh;}
 
-.gridListaNav{  margin: 0%;
-                padding: 0%;
-                list-style: none;
-                height: 5vh;
-                display: grid;
-                grid-template-rows:100%;
-                grid-template-columns:20% 20% 20% 20% 20%;
-                justify-items: center;
-                align-items: center;}
+.gridListaNav{ @include gridListaNav(5vh,100% ,20% 20% 20% 20% 20% );}
 
 nav{ font-size: 2vh;
      grid-area: nav;
@@ -100,58 +94,44 @@ nav{ font-size: 2vh;
                    
 .liNav:hover{ font-size: 120%;
               transition: 2s;}
-                   
 
-.gridMain{      grid-area: mainCentral;
-            display: grid;
-            grid-template-rows: 105vh;
-            grid-template-columns:50vh 50vh ;
-            grid-template-areas:"section aside";}  
+.gridMain{  @include gridMain(mainCentral, 105vh,50vh 50vh, "section aside");}  
 
-.gridSectAside{   grid-area: section;
-              display: grid;
-              grid-template-rows: 10vh 95vh;
-              grid-template-columns:50vh;
-              grid-template-areas:  "titulo  "
-                                    "parrafo";}
+.gridSectAside{ @include gridMain(section,10vh 95vh ,50vh ,"titulo  "
+                                                            "parrafo" )}
 
 .titulo{grid-area: titulo; 
     text-align: center;
     margin: auto;}
 
-.parrafo{grid-area: parrafo;
-     margin: 2%;
-    text-align: justify;}
+.parrafo{   grid-area: parrafo;
+            margin: 2%;
+            text-align: justify;}
 
-.gridAsideIndex{ grid-area: aside;
-            display: grid;
-            grid-template-rows: 10vh 30vh 70vh ;
-            grid-template-columns:50vh;
-            grid-template-areas:  "titulo  "
-                                  "asideVideo  "
-                                  "parrafoDos";}
+.gridAsideIndex{ @include gridMain(aside, 10vh 30vh 70vh, 50vh ,  "titulo  "
+                                                                "asideVideo"
+                                                                "parrafoDos" )}
 
 .asideVideo{    grid-area: asideVideo;
-            display: grid;
-            justify-content: space-evenly }
+                display: grid;
+                justify-content: space-evenly }
 
 .estiloVideo{   max-width: 100%;
-            max-height: 100% ;
-            border: solid  yellow;}
+                max-height: 100% ;
+                border: solid  yellow;}
     
-.parrafoDos{grid-area: parrafoDos;
-        margin: 2%;
-        text-align: justify}
+.parrafoDos{    grid-area: parrafoDos;
+                margin: 2%;
+                text-align: justify}
 
 
-.arriba{font-size: 3vh; 
-    grid-area: arriba;
-    text-align: center;
-    margin: auto;}
+.arriba{    font-size: 3vh; 
+            grid-area: arriba;
+            text-align: center;
+            margin: auto;}
 
 
-#gridFooter{   
-            grid-area: footer;}
+#gridFooter{ grid-area: footer;}
 
 .divFooter{ grid-area: direc;
             text-align: center;}
@@ -166,10 +146,10 @@ nav{ font-size: 2vh;
                         
 .altoCuatro{height: 4vh;}
                         
-.divLogo{ grid-area: logo;
-        text-align: center;}
+.divLogo{    grid-area: logo;
+            text-align: center;}
                         
-.inst{ grid-area: inst;
+.inst{   grid-area: inst;
         text-align: center;}
                         
 .logoInst{ height: 6vh;
@@ -188,25 +168,21 @@ nav{ font-size: 2vh;
           font-size: 1.8vh;}
 
 /*VISION*/
-.gridAsideVision{ grid-area: aside;
-    display: grid;
-    grid-template-rows: 10vh 90vh ;
-    grid-template-columns:50vh;
-    grid-template-areas:  "titulo  "
-                           "asideProfe";}
+.gridAsideVision{ @include gridMain(aside,10vh 90vh,50vh ,"titulo"
+                                                            "asideProfe");}
 
 .asideProfe{    grid-area: asideProfe  ;
-             display: grid;
-            grid-template-rows: 50vh 10vh;}
+                display: grid;
+                grid-template-rows: 50vh 10vh;}
 
 .profeDimension{height: 100%;
-            width: 100%;}
+                width: 100%;}
 
 .estiloProfe{   max-width: 50vh;
-            max-height: 50vh ;
-            border: solid  yellow;
-            display: flex;
-            margin: auto; }
+                max-height: 50vh ;
+                border: solid  yellow;
+                display: flex;
+                margin: auto; }
 
 .cardAncho{     width: 100%;}
 
@@ -214,130 +190,78 @@ nav{ font-size: 2vh;
             text-align: center;}
 
 /*Servicios*/
-.gridAsideServicios{ grid-area: aside;
-    display: grid;
-    grid-template-rows: 10vh 90vh ;
-    grid-template-columns:50vh;
-    grid-template-areas:  "titulo  "
-                          "parrafoDos";}
+.gridAsideServicios{ @include gridMain(aside, 10vh 90vh , 50vh ,"titulo"
+                                                                "parrafoDos" );}
 
-.wc{    font-size: 2.2vh;
-    color: rgb(131, 175, 106);
+@mixin colorServicios($colorLetras) {
+    font-size: 2.2vh;
+    color:$colorLetras;
     margin: 2vh;}
+
+
+.wc{ @include colorServicios(rgb(131, 175, 106));}
                                 
-.wde{   font-size: 2.2vh;        
-    color: rgb(133, 114, 202);
-    margin: 2vh;}
+.wde{ @include colorServicios(rgb(133, 114, 202));}
                 
-.c{     font-size: 2.2vh;
-    color: rgb(205, 219, 143);
-    margin: 2vh;}
-    
-                
-.ta{    font-size: 2.2vh;
-    color: rgb(224, 24, 174);
-    margin: 2vh;}
+.c{ @include colorServicios(rgb(205, 219, 143));}
+                  
+.ta{ @include colorServicios(rgb(224, 24, 174));}
 
 
 /*HORARIOS*/
 
-.gridMainHorarios{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows:10vh 90vh;
-                    grid-template-columns:50vh 50vh;
-                    grid-template-areas:" horarios  . "
-                                        " tabla     tabla";} 
+.gridMainHorarios{  @include gridMain(mainCentral, 10vh 90vh, 50vh 50vh," horarios  . "
+    " tabla     tabla" );} 
  
 .tituloHorario{ grid-area: horarios;
-                 margin: auto;}
+                margin: auto;}
 
 .tablaHorarios{grid-area: tabla;}
 
-
-.tablaInd{   grid-area: inicio;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2.3vh;
-            color: #666;}
-
-.tablaWc{    grid-area: uno;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2vh;
-            color: rgb(131, 175, 106);}
-
-.tablaWcDos{ grid-area: dos;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2vh;
-            color: rgb(131, 175, 106);}
-        
-.tablaWde{   grid-area: tres;
-            display: grid;
-            grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-            text-align: center;
-            font-size: 2vh;
-            color: rgb(133, 114, 202);}
-        
-.tablac{     grid-area: cuatro;
-    display: grid;
+@mixin estiloTabla($area , $displ , $tamLetra , $colorTabl) {
+    grid-area: $area;
+    display: $displ;
     grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
     text-align: center;
-    font-size: 2vh;
-    color: rgb(205, 219, 143);}
+    font-size: $tamLetra;
+    color:$colorTabl;}
 
-.tablacDos{  grid-area: cinco;
-    display: grid;
-    grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-    text-align: center;
-    font-size: 2vh;
-    color: rgb(205, 219, 143);}
+.tablaInd{  @include estiloTabla(inicio, grid, 2.3vh, rgb(102, 102, 102) );}
+
+
+.tablaWc{   @include estiloTabla(uno, grid, 2vh, rgb(131, 175, 106) );}
+
+.tablaWcDos{   @include estiloTabla(dos, grid, 2vh, rgb(131, 175, 106) );}
         
-.tablaTa{    grid-area: seis;
-    display: grid;
-    grid-template-columns:10vh 10vh 15vh 40vh 10vh 15vh;
-    text-align: center;
-    font-size: 2vh;
-    color: rgb(224, 24, 174);}
+.tablaWde{  @include estiloTabla(tres, grid, 2vh, rgb(133, 114, 202) );}
+        
+.tablac{    @include estiloTabla(cuatro, grid, 2vh,  rgb(205, 219, 143));}
+
+.tablacDos{ @include estiloTabla(cinco, grid, 2vh, rgb(205, 219, 143));}
+        
+.tablaTa{   @include estiloTabla(seis, grid, 2vh, rgb(224, 24, 174));}
 
 /*Contactos*/
 
-.gridMainContacto{  grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 120vh;
-                    grid-template-columns:100vh ;
-                    grid-template-areas:"section";}                           
+.gridMainContacto{  @include gridMain(mainCentral, 120vh, 100vh, "section");}                           
 
-.gridCuerpoContacto{
-                    display: grid;
-                    grid-template-rows:25vh 5vh 130vh 5vh 21vh 10vh;
-                    grid-template-columns: 100vh;
-                    grid-template-areas:"heade  "
-                                        "nave"
-                                        "mainCentral "
-                                        "arriba  "
-                                        "footer  "
-                                        ".";}
+.gridCuerpoContacto{@include gridCuerpo(25vh 5vh 130vh 5vh 21vh 10vh,100vh ,
+    "heade  "
+    "nave"
+    "mainCentral "
+    "arriba  "
+    "footer  "
+    ".");}
 
 
-.gridSectAsideContacto{ grid-area: section;
-                    display: grid;
-                    grid-template-rows: 10vh 70vh;
-                    grid-template-columns:20vh 60vh 20vh;
-                    grid-template-areas:  ". titulo . "
-                                    ". parrafo .";}
+.gridSectAsideContacto{ @include gridMain(section, 10vh 70vh, 20vh 50vh 20vh,  ". titulo . "
+                                                                                ". parrafo . ");}
 
-  
-
-
-.gridParrafoContacto{grid-area: parrafo;
-     margin: 2%;
-    text-align: justify;
-    display: grid;
-    grid-template-rows: 15vh 15vh 15vh 24vh 18vh;}
+.gridParrafoContacto{   grid-area: parrafo;
+                        margin: 2%;
+                        text-align: justify;
+                        display: grid;
+                        grid-template-rows: 15vh 15vh 15vh 24vh 18vh;}
 
 
 .textoContacto{font-size: 2vh;}
@@ -345,62 +269,23 @@ nav{ font-size: 2vh;
 .texareaContacto{height: 20vh;}
 
 
+.gridAsideContacto{ @include gridMain(aside, 10vh 70vh, 50vh, "titulo  "
+                                                             "asideProfe");}
 
 
-
-
-
-
-.gridAsideContacto{ grid-area: aside;
-              display: grid;
-              grid-template-rows: 10vh 70vh ;
-              grid-template-columns:50vh;
-              grid-template-areas:  "titulo  "
-                                    "asideProfe";}
-
-
-
-
-
-
-
-
-
-.estiloProfeDos{   max-width: 30vh;
-                max-height: 30vh ;
-               border: solid  yellow;
-               display: flex;
-               margin: auto;}
-.botonAncho{
-            height: 8vh;}
-
-
-
-
-
-  
-
-
-
+.estiloProfeDos{    max-width: 30vh;
+                    max-height: 30vh ;
+                    border: solid  yellow;
+                    display: flex;
+                    margin: auto;}
+.botonAncho{height: 8vh;}
 
 .checkCentrado{margin: auto;}        
-    
-
-
-
-
-
-
-
-    
-
          
-/*index*/
+/*medias queries*/
 @media only screen and (max-width:576px){
 
 body{width: 40vh;}
-
-
 
 body footer div img{max-width: 5vh;
                height: 5vh;}
@@ -421,14 +306,13 @@ body footer div img{max-width: 5vh;
                                 "footer  "
                                  ".";}
 
-.gridHeaderIndex{   grid-area: heade;
-    display: grid;
-    grid-template-rows: 25vh;
-    grid-template-columns: 40vh;}
+.gridHeaderIndex{   
+                    grid-area: heade;
+                    display: grid;
+                    grid-template-rows: 25vh;
+                    grid-template-columns: 40vh;}
 
-.gridNavIndex{ /* grid-area:nave ;
-                display: grid;*/
-                grid-template-rows: 12.5vh;
+.gridNavIndex{  grid-template-rows: 12.5vh;
                 grid-column: 40vh;}
 
 .imgHeader{
@@ -440,77 +324,48 @@ body footer div img{max-width: 5vh;
             justify-items: center;}
 
 
-.gridListaNav{  margin: 0%;
-                padding: 0%;
-                list-style: none;
-                height: 100%;
-                display: grid;
-                grid-template-rows:2.5vh 2.5vh 2.5vh 2.5vh 2.5vh;
-                grid-template-columns:100%;
-               justify-items: center;
-                align-items: center;}
+.gridListaNav{  @include gridListaNav(100%, 2.5vh 2.5vh 2.5vh 2.5vh 2.5vh, 100%);}
 
-.gridMain{      grid-area: mainCentral;
-            display: grid;
-            grid-template-rows: 80vh 60vh;
-            grid-template-columns:40vh ;
-            grid-template-areas:"section"
-                                "aside";} 
+.gridMain{  @include gridMain(mainCentral, 80vh 60vh, 40vh,"section"
+                                                            "aside" );} 
 
-.gridAsideIndex{ grid-area: aside;
-             display: grid;
-             grid-template-rows: 20vh 30vh ;
-            grid-template-columns:40vh;
-            grid-template-areas:  "parrafoDos  "
-                                     "asideVideo";}
+.gridAsideIndex{ @include gridMain(aside, 20vh 30vh, 40vh, "parrafoDos  "
+                                                                "asideVideo");}
 /*Vision*/
 .mediaVision{height: 80vh;}
 
-.gridCuerpoMediaVision{
-    display: grid;
-    grid-template-rows:25vh 12.5vh 80vh 5vh 20vh 5vh;
-    grid-template-columns: 40vh;
-    grid-template-areas:"heade  "
-                        "nave     "
-                        "mainCentral "
-                        "arriba  "
-                        "footer  "
-                         ".";}
+.gridCuerpoMediaVision{ display: grid;
+                        grid-template-rows:25vh 12.5vh 80vh 5vh 20vh 5vh;
+                        grid-template-columns: 40vh;
+                        grid-template-areas:"heade  "
+                                            "nave     "
+                                            "mainCentral "
+                                            "arriba  "
+                                            "footer  "
+                                            ".";}
 
-.gridMainMediaVision{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 30vh 50vh;
-                    grid-template-columns:40vh ;
-                    grid-template-areas:"section"
-                                "aside";} 
+.gridMainMediaVision{ @include gridMain(mainCentral,30vh 50vh, 40vh, "section"
+    "aside");} 
 
 
-.gridSectAside{   grid-area: section;
-              display: grid;
-              grid-template-rows: 10vh 60vh;
-              grid-template-columns:40vh;
-              grid-template-areas:  "titulo  "
-                                   "parrafo";}
+.gridSectAside{ @include gridMain(section, 10vh 60vh, 40vh, "titulo  "
+    "parrafo" );}
 
 
 
-.gridAsideVision{ grid-area: aside;
-              display: grid;
-              grid-template-rows: 5vh 40vh ;
-              grid-template-columns:40vh;
-              grid-template-areas:  ". "
-                                    "asideProfe";}
+.gridAsideVision{ @include gridMain(aside, 5vh 40vh, 40vh,". "
+                                                          "asideProfe" );}
 
 .asideProfe{    grid-area: asideProfe  ;
-             display: grid;
-            grid-template-rows: 30vh 10vh;}
+                display: grid;
+                grid-template-rows: 30vh 10vh;}
 
 
 .estiloProfe{   max-width: 30vh;
-            max-height: 30vh ;
-            border: solid  yellow;
-            display: flex;
-            margin: auto;}
+                max-height: 30vh ;
+                border: solid  yellow;
+                display: flex;
+                margin: auto;}
 
 /*Sevicios*/
 .mediaServicios{height: 300vh;}
@@ -526,34 +381,23 @@ body footer div img{max-width: 5vh;
                                             "footer  "
                                             ".";}
 
-.gridMainServicios{     grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 88vh 70vh;
-                    grid-template-columns:40vh ;
-                    grid-template-areas:"section"
-                                         "aside";} 
+.gridMainServicios{ @include gridMain(mainCentral, 88vh 70vh, 40vh, "section"
+                                                                    "aside");} 
 
-.gridSectAside{   grid-area: section;
-              display: grid;
-              grid-template-rows: 10vh 100vh;
-              grid-template-columns:40vh;
-              grid-template-areas:  "titulo  "
-                                    "parrafo";}
 
-.gridAsideServicios{ grid-area: aside;
-                 display: grid;
-                 grid-template-rows: 1vh 69vh ;
-                 grid-template-columns:40vh;
-                 grid-template-areas:  "titulo  "
-                                       "parrafoDos";}
+.gridSectAside{ @include gridMain(section, 10vh 100vh, 40vh, "titulo  "
+                                                             "parrafo");}
+
+.gridAsideServicios{ @include gridMain(aside, 1vh 69vh, 40vh, "titulo  "
+                                                            "parrafoDos");}
                                        
-.mediaParrafo{grid-area: parrafo;
-     margin: 0;
-    text-align: center;}
+.mediaParrafo{  grid-area: parrafo;
+                margin: 0;
+                text-align: center;}
 
-.mediaParrafoDos{grid-area: parrafoDos;
-     margin: 0;
-    text-align: center;}
+.mediaParrafoDos{   grid-area: parrafoDos;
+                    margin: 0;
+                    text-align: center;}
 
 .wc{    margin: 0;}
                                 
@@ -561,7 +405,6 @@ body footer div img{max-width: 5vh;
                 
 .c{     margin: 0;}
     
-                
 .ta{    margin: 0;}
 
 /*Horarios*/
@@ -579,63 +422,32 @@ body footer div img{max-width: 5vh;
                                     "footer  "
                                     ".";}
 
-.gridMainHorarios{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows:10vh 90vh;
-                    grid-template-columns:20vh 20vh;
-                    grid-template-areas:" horarios  horarios "
-                                        " tabla     tabla";} 
+.gridMainHorarios{ @include gridMain(maincentral, 10vh 90vh, 20vh 20vh, " horarios  horarios "
+    " tabla     tabla");} 
 
 
 
-.tablaInd{   grid-area: inicio;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.8vh;
-         color: #666;}
+.tablaInd{  grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
+            font-size: 1.8vh;}
                             
-.tablaWc{    grid-area: uno;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.3vh;
-         color: rgb(131, 175, 106);}
+.tablaWc{   grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
+            font-size: 1.3vh;}
                             
-.tablaWcDos{ grid-area: dos;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.3vh;
-         color: rgb(131, 175, 106);}
+.tablaWcDos{ grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
+             font-size: 1.3vh;
+}
                                         
-.tablaWde{   grid-area: tres;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.3vh;
-         color: rgb(133, 114, 202);}
+.tablaWde{  grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
+            font-size: 1.3vh;}
                                         
-.tablac{     grid-area: cuatro;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.3vh;
-         color: rgb(205, 219, 143);}
+.tablac{    grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
+            font-size: 1.3vh;}
                             
-.tablacDos{  grid-area: cinco;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.3vh;
-         color: rgb(205, 219, 143);}
+.tablacDos{ grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
+            font-size: 1.3vh;}
                                         
-.tablaTa{    grid-area: seis;
-         display: grid;
-         grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;
-         text-align: center;
-         font-size: 1.3vh;
-         color: rgb(224, 24, 174);}
+.tablaTa{   grid-template-columns:4.5vh 6vh 6vh 9.5vh 9vh 5vh;text-align: center;
+            font-size: 1.3vh;}
 
 /*Contacto*/
 
@@ -643,7 +455,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoContacto{
     display: grid;
-    grid-template-rows:25vh 12.5vh 115vh 5vh 21vh 1vh;
+    grid-template-rows:25vh 12.5vh 160vh 5vh 21vh 1vh;
     grid-template-columns: 40vh;
     grid-template-areas:"heade  "
                     "nave     "
@@ -652,27 +464,13 @@ body footer div img{max-width: 5vh;
                     "footer  "
                     ".";}
 
-.gridMainContacto{      grid-area: mainCentral;
-                    display: grid;
-                    grid-template-rows: 85vh 80vh;
-                    grid-template-columns:40vh ;
-                    grid-template-areas:"section"
-                                         "aside";}
+.gridMainContacto{  @include gridMain(mainCentral, 85vh 80vh, 40vh, "section"
+    "aside");}
 
-.gridSectAsideContacto{ grid-area: section;
-                    display: grid;
-                    grid-template-rows: 10vh 70vh;
-                    grid-template-columns:40vh;
-                    grid-template-areas:  "titulo  "
-                                    "parrafo";}
+.gridSectAsideContacto{ @include gridMain(section, 10vh 70vh, 40vh, "titulo  "
+    "parrafo");}
 
-.gridAsideContacto{ grid-area: aside;
-              display: grid;
-              grid-template-rows: 10vh 70vh ;
-              grid-template-columns:40vh;
-              grid-template-areas:  "titulo  "
-                                    "asideProfe";}
-/*Footer - todos*/
+
 .logoInst{ height: 2vh;
        width: 2vh;}
 
