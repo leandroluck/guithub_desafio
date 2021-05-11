@@ -779,12 +779,12 @@ nav {
         grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
   }
   .gridMainHorarios {
-    grid-area: maincentral;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: mainCentral;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 10vh 90vh;
         grid-template-rows: 10vh 90vh;
-    -ms-grid-columns: 20vh 20vh;
         grid-template-columns: 20vh 20vh;
         grid-template-areas: " horarios  horarios " " tabla     tabla";
   }
