@@ -772,8 +772,8 @@ nav {
   .gridCuerpoMediaHorario {
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 25vh 12.5vh 100vh 5vh 21vh 1vh;
-        grid-template-rows: 25vh 12.5vh 100vh 5vh 21vh 1vh;
+    -ms-grid-rows: 25vh 12.5vh 90vh 5vh 21vh 1vh;
+        grid-template-rows: 25vh 12.5vh 90vh 5vh 21vh 1vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
         grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";
@@ -831,8 +831,8 @@ nav {
   .gridCuerpoContacto {
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 25vh 12.5vh 160vh 5vh 21vh 1vh;
-        grid-template-rows: 25vh 12.5vh 160vh 5vh 21vh 1vh;
+    -ms-grid-rows: 25vh 12.5vh 120vh 5vh 21vh 1vh;
+        grid-template-rows: 25vh 12.5vh 120vh 5vh 21vh 1vh;
     -ms-grid-columns: 40vh;
         grid-template-columns: 40vh;
         grid-template-areas: "heade  " "nave     " "mainCentral " "arriba  " "footer  " ".";

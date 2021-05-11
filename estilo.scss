@@ -413,7 +413,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoMediaHorario{
                     display: grid;
-                    grid-template-rows:25vh 12.5vh 100vh 5vh 21vh 1vh;
+                    grid-template-rows:25vh 12.5vh 90vh 5vh 21vh 1vh;
                     grid-template-columns: 40vh;
                     grid-template-areas:"heade  "
                                     "nave     "
@@ -455,7 +455,7 @@ body footer div img{max-width: 5vh;
 
 .gridCuerpoContacto{
     display: grid;
-    grid-template-rows:25vh 12.5vh 160vh 5vh 21vh 1vh;
+    grid-template-rows:25vh 12.5vh 120vh 5vh 21vh 1vh;
     grid-template-columns: 40vh;
     grid-template-areas:"heade  "
                     "nave     "
